@@ -7,12 +7,12 @@ default: &default
 
 development:
   <<: *default
-  database: proyecto_development
+  database: 2023-2-grupo-54_development
 
 test:
   <<: *default
-  database: proyecto_test
+  database: 2023-2-grupo-54_test
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
