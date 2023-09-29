@@ -17,3 +17,29 @@ Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 736
   [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2674457127358331070)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2674457127358331070)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2674457127358331070)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-09-29 14:39:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RenderController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering render/index.html.erb within layouts/application
+  Rendered render/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 300)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 5328)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms | Allocations: 10374)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<ActionView::Base:0x0000000000af28>):
+    12: 
+    13:   <body>
+    14: 
+    15:     <% if user_signed_in? %>
+    16:       <%= link_to "Edit", edit_user_registration_path %>
+    17:       <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+    18:     <% else %>
+  
+app/views/layouts/application.html.erb:15
