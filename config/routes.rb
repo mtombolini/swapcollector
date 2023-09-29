@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-   get 'layouts/application'
+   get 'render/index'
  
   # For more details on this file's DSL, see https://guides.rubyonrails.org/routing.html
-  root 'home#index'
+  root 'render#index'
  end
