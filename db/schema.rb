@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_29_185244) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_29_234203) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: :cascade do |t|
+    t.string "mensajes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mensajes", force: :cascade do |t|
+    t.string "Contenido"
+    t.datetime "Fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "productos", force: :cascade do |t|
+    t.string "CategoriaGeneral"
+    t.string "SubCategoria"
+    t.string "Nombre"
+    t.string "Descripcion"
+    t.boolean "Estado"
+    t.float "Precio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.float "Calificacion"
+    t.string "Contenido"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "solicituds", force: :cascade do |t|
+    t.string "Producto"
+    t.string "Descripcion"
+    t.date "FechaReserva"
+    t.boolean "Estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
