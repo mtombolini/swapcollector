@@ -1,34 +1,89 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Proyecto</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
 
-  <body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('URL_DE_TU_IMAGEN') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-    <% if user_signed_in? %>
-      <%= link_to "Edit", edit_user_registration_path %>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
-      <%= link_to "Sign up", new_user_registration_path %>
-    <% end %>
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+        }
 
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
+        a, .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-    <% if flash[:alert] %>
-      <p class="alert"><%= flash[:alert] %></p>
-    <% end %>
+        .notice, .alert {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
 
-    <%= yield %>
+        .notice {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
 
-  </body>
+        .alert {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <% if user_signed_in? %>
+        <%= link_to "Edit", edit_user_registration_path %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <%= link_to "Sign up", new_user_registration_path %>
+        <% end %>
+
+        <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+        <% end %>
+
+        <% if flash[:alert] %>
+        <p class="alert"><%= flash[:alert] %></p>
+        <% end %>
+
+        <%= yield %>
+    </div>
+</body>
+
 </html>
