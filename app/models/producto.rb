@@ -1,4 +1,4 @@
 class Producto < ApplicationRecord
-    has_many :solicituds
-    has_many :reviews
+  has_many :solicitudes
+  has_many :reviews
 end

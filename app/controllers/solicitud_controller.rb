@@ -1,2 +1,0 @@
-class SolicitudController < ApplicationController
-end
