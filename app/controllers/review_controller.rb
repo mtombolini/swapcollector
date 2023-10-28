@@ -1,55 +1,39 @@
-class ReviewController < ApplicationController
-    before_action :set_review, only: [:show, :destroy, :edit, :update]
+class ReviewsController < ApplicationController
+    skip_before_action :verify_authenticity_token
 
     def index
-        @reviews = Review.all
+        render json: Review.all
     end
 
     def show
-        review = Review.find(params[:id])
-    end
-
-    def new
-        @review = Review.new
+        render json: Review.find(params[:id])
     end
 
     def create
-        @review = Review.new(review_params)
-        @review.user = current_user
-
-        if @review.save
-            redirect_to @review, notice: 'Rview creada'
+        review = Review.new(review_params)
+        if review.save
+            render json: review, status: :created
         else
-            render :new
-        end
-    end
-
-    def edit 
-        if @review.user != current_user
-            redirect_to root_path, alert: 'No puedes editar esta resena'
-        else
-            render :edit
+            render json: review.errors, status: :unprocessable_entity
         end
     end
 
     def update
-        if @review.update(review_params)
-            redirect_to @review, notice: 'Review actualizada'
+        review = Review.find(params[:id])
+        if review.update(review_params)
+            render json: review, status: :ok
         else
-            render :edit
+            render json: review.errors, status: :unprocessable_entity
         end
     end
 
-
     def destroy
-        @review.destroy
-        redirect_to review_path, notice: 'Review eliminada'
+        Review.find(params[:id]).destroy!
+
+        head :no_content
     end
 
     private
 
-
     def review_params
-        params.require(:review).permit(:rating, :body)
-    end
-end
+        p

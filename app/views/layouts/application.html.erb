@@ -10,81 +10,38 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: url('URL_DE_TU_IMAGEN') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-            text-align: center;
-        }
-
-        a, .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .notice, .alert {
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-        }
-
-        .notice {
-            background-color: #D4EDDA;
-            color: #155724;
-        }
-
-        .alert {
-            background-color: #F8D7DA;
-            color: #721C24;
-        }
-    </style>
+    <%= javascript_importmap_tags %>  <!-- Esta línea ha cambiado -->
 </head>
 
 <body>
-    <div class="container">
-        <% if user_signed_in? %>
-            <%= link_to "Edit", edit_user_registration_path %>
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-        <% else %>
-            <%= link_to "Sign in", new_user_session_path %>
-            <%= link_to "Sign up", new_user_registration_path %>
-        <% end %>
-
-        <% if flash[:notice] %>
-            <p class="notice"><%= flash[:notice] %></p>
-        <% end %>
-
-        <% if flash[:alert] %>
-            <p class="alert"><%= flash[:alert] %></p>
-        <% end %>
-
-        <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <a class="navbar-brand" href="#">Mercado Amigo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <%= link_to 'Productos', productos_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Ventas', solicitudes_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+                <%= link_to 'Compras', reviews_path, class: 'nav-link' %>
+            </li>
+        </ul>
     </div>
+</nav>
+
+    <%= yield %>
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
-
