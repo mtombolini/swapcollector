@@ -1,7 +1,7 @@
 databases:
   - name: CollectorSwap
-    databaseName: collector_swap
-    user: collector_swap
+    databaseName: db_collectorswap
+    user: db_collectorswap
 
 services:
   - type: web
@@ -12,7 +12,7 @@ services:
     envVars:
       - key: postgres://db_collectorswap:qT3h4t9RMLrSAEvWW6tysGBYiv5plbxz@dpg-clc29al4lnec73e0dv7g-a/db_collectorswap
         fromDatabase:
-          name: mysite
+          name: CollectorSwap
           property: connectionString
       - key: e5c5c0fd21619c12201deace270e9333
         sync: false
