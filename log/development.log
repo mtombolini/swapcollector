@@ -95,3 +95,13 @@ Processing by RenderController#index as HTML
 Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 7340)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-18 18:08:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RenderController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering render/index.html.erb within layouts/application
+  Rendered render/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 166.5ms | Allocations: 91761)
+Completed 200 OK in 187ms (Views: 170.4ms | ActiveRecord: 0.0ms | Allocations: 99768)
+
+
