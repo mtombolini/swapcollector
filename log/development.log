@@ -1,0 +1,9 @@
+  [1m[35m (354.2ms)[0m  [1m[35mCREATE DATABASE "CollectorSwap_development" ENCODING = 'unicode'[0m
+  [1m[35m (218.6ms)[0m  [1m[35mCREATE DATABASE "CollectorSwap_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2023-11-17 22:18:23 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/benja/.rvm/gems/ruby-3.2.2/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/benja/.rvm/gems/ruby-3.2.2/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.3ms | Allocations: 634)
+Completed 200 OK in 39ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 7353)
+
+
