@@ -105,3 +105,35 @@ Processing by RenderController#index as HTML
 Completed 200 OK in 187ms (Views: 170.4ms | ActiveRecord: 0.0ms | Allocations: 99768)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-18 18:10:05 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RenderController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering render/index.html.erb within layouts/application
+  Rendered render/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1079)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4004)
+Completed 200 OK in 39ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 8214)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-18 18:10:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 724)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 4936)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 7748)
+Completed 200 OK in 49ms (Views: 26.6ms | ActiveRecord: 7.1ms | Allocations: 20220)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-18 18:10:38 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 234)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 156)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2682)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3527)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4857)
+
+
