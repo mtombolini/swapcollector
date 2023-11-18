@@ -1,0 +1,18 @@
+databases:
+  - name: CollectorSwap
+    databaseName: collector_swap
+    user: collector_swap
+
+services:
+  - type: web
+    name: collector_swap
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
