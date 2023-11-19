@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_product, only: %i[show edit update destroy]
 
   
@@ -6,14 +7,14 @@ class ProductsController < ApplicationController
     @products = Product.all
     respond_to do |format|
       format.html
-      format.JSON { render json: @products }
+      format.json { render json: @products }
     end
   end
 
   def show
     respond_to do |format|
       format.html
-      format.JSON { render json: @product }
+      format.json { render json: @product }
     end
   end
 
@@ -25,8 +26,7 @@ class ProductsController < ApplicationController
   def edit
   end
 
-  def create
-      
+  def create     
       @product = Product.new(product_params)
       respond_to do |format|
         if @product.save
@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
+    @product.delete
     respond_to do |format|
         format.html { redirect_to products_url, notice: "Producto eliminado exitosamente" }
         format.json { head :no_content }
@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :rarity, :user, :sold)
+    params.require(:product).permit(:name, :description, :price, :rarity, :user_id, :sold)
   end
 
   def set_product

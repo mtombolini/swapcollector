@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+  get 'comments/update'
+  get 'comments/destroy'
   get 'products/index'
   get 'products/show'
   get 'products/new'
@@ -13,4 +16,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "render#index"
+  resources :products do
+    resources :comments, only: [:index, :create]
+  end
+  resources :comments, only: [:show, :update, :destroy]
 end
