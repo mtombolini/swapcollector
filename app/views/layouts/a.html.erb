@@ -1,0 +1,26 @@
+<main class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 text-center">
+      <h1 class="display-4">HOLA a CollectorSwap</h1>
+      <p class="lead">Your go-to platform for collectors</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <% if user_signed_in? %>
+        <div class="alert alert-success">
+          Logged in as <strong><%= current_user.name %></strong>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+        </div>
+      <% else %>
+        <div class="text-center">
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</main>
