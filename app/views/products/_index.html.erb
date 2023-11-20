@@ -1,0 +1,16 @@
+<h1>Productos</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= link_to product.name, product %>
+      <% if user_signed_in? && current_user == product.user %>
+        <%= link_to 'Editar', edit_product_path(product) %> |
+        <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Publicar producto', new_product_path %>
+
