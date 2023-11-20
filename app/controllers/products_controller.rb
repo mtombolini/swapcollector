@@ -115,6 +115,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+
         format.html { redirect_to @product, notice: "Producto actualizado exitosamente" }
         format.json { render json: @product, status: :created, location: @product }
       else
@@ -135,7 +136,7 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :rarity, :user_id, :sold)
+    params.require(:product).permit(:name, :description, :price, :rarity, :image, :user_id)
   end
 
   def set_product
