@@ -52,10 +52,10 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.delete
+    @product.destroy
     respond_to do |format|
-        format.html { redirect_to products_url, notice: "Producto eliminado exitosamente" }
-        format.json { head :no_content }
+        format.html { redirect_to products_url, notice: "Producto eliminado exitosamente", status: :see_other}
+        format.turbo_stream
     end
   end
 
