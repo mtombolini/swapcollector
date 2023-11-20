@@ -5190,3 +5190,1551 @@ Processing by Users::SessionsController#new as HTML
 Completed 200 OK in 1101ms (Views: 1061.6ms | ActiveRecord: 9.0ms | Allocations: 110240)
 
 
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:24:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.0ms | Allocations: 3631)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:24:57 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.4ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 32.5ms | Allocations: 4819)
+  Rendered layout layouts/application.html.erb (Duration: 441.9ms | Allocations: 99631)
+Completed 200 OK in 474ms (Views: 452.9ms | ActiveRecord: 3.5ms | Allocations: 111097)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:25:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 305ms (ActiveRecord: 6.7ms | Allocations: 17992)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:25:10 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 2.3ms | Allocations: 946)
+  Rendered layout layouts/application.html.erb (Duration: 77.4ms | Allocations: 37220)
+Completed 200 OK in 89ms (Views: 79.0ms | ActiveRecord: 0.3ms | Allocations: 40127)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-11-19 20:25:13 -0300
+Processing by Users::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 16ms (ActiveRecord: 0.4ms | Allocations: 7961)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:25:13 -0300
+Processing by HomeController#home as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 306)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:25:13 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 819)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3493)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 5966)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 7442)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:25:24 -0300
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 227ms (ActiveRecord: 0.8ms | Allocations: 5585)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:25:24 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 652)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3155)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.3ms | Allocations: 5227)
+
+
+Started GET "/edit" for 127.0.0.1 at 2023-11-19 20:25:26 -0300
+Processing by Users::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 234)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2823)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5304)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 7694)
+
+
+Started DELETE "/" for 127.0.0.1 at 2023-11-19 20:25:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (18.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 80ms (ActiveRecord: 23.9ms | Allocations: 16342)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:25:30 -0300
+Processing by HomeController#home as TURBO_STREAM
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms | Allocations: 439)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:25:30 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3799)
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 40140)
+Completed 200 OK in 86ms (Views: 84.5ms | ActiveRecord: 0.0ms | Allocations: 43213)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:25:36 -0300
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.9ms | Allocations: 1685)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:25:36 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 199)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1357)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3753)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4406)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:25:42 -0300
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms | Allocations: 1493)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:25:42 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1357)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3795)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4460)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-19 20:25:45 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 234)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 212)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2946)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5428)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 6579)
+
+
+Started POST "/" for 127.0.0.1 at 2023-11-19 20:25:58 -0300
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"Benja", "phone_number"=>"111"}, "commit"=>"Aceptar"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (5.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "bthompson@uc.cl"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-11-19 23:25:58.281367"], ["updated_at", "2023-11-19 23:25:58.281367"], ["name", "Benja"], ["phone_number", "111"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 245ms (ActiveRecord: 8.2ms | Allocations: 7708)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:25:58 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 294)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2698)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 4308)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-11-19 20:26:00 -0300
+Processing by Users::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 26ms (ActiveRecord: 0.4ms | Allocations: 7476)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:26:00 -0300
+Processing by HomeController#home as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 266)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:26:00 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 199)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1361)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3758)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4432)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:28:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+Completed 401 Unauthorized in 40ms (ActiveRecord: 0.0ms | Allocations: 2492)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:28:48 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.7ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 33.3ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 317.3ms | Allocations: 40388)
+Completed 200 OK in 375ms (Views: 331.4ms | ActiveRecord: 7.7ms | Allocations: 50206)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:28:55 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 337ms (ActiveRecord: 5.3ms | Allocations: 16022)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:28:55 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1758)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1859)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms | Allocations: 4711)
+
+
+  
+ActionView::Template::Error (Missing partial products/_index with {:locale=>[:en], :formats=>[:html, :turbo_stream], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/bthompson/2023-2-grupo-54/app/views"
+  * "/home/bthompson/.rvm/gems/ruby-3.2.2/gems/devise-4.9.3/app/views"
+  * "/home/bthompson/.rvm/gems/ruby-3.2.2/gems/turbo-rails-1.5.0/app/views"
+  * "/home/bthompson/.rvm/gems/ruby-3.2.2/gems/actiontext-7.0.8/app/views"
+  * "/home/bthompson/.rvm/gems/ruby-3.2.2/gems/actionmailbox-7.0.8/app/views"
+):
+    1: <main class="container">
+    2: <%= render partial: 'products/index' %>
+    3:   <div class="row justify-content-center mt-5">
+    4:     <div class="col-md-6 text-center">
+    5:       <h1 class="display-4">HOLA a CollectorSwap</h1>
+  
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:30:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 1.8ms | Allocations: 1684)
+  Rendered home/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2342)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2442)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 3.7ms | Allocations: 17473)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (162.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CollectorSwap_development"[0m
+  [1m[35m (253.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "CollectorSwap_test"[0m
+  [1m[35m (731.6ms)[0m  [1m[35mCREATE DATABASE "CollectorSwap_development" ENCODING = 'unicode'[0m
+  [1m[35m (240.3ms)[0m  [1m[35mCREATE DATABASE "CollectorSwap_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (5.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (96.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "product_id" bigint NOT NULL, "user_id" bigint NOT NULL, "date" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" decimal, "rarity" integer, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "sold" boolean DEFAULT FALSE)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "phone_number" character varying)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (8.6ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_a0d280f6e4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (4.2ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231118224630)[0m
+  [1m[35m (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231118014921),
+(20231118020127),
+(20231118020217),
+(20231118223926),
+(20231118223930);
+
+[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-11-19 23:32:22.613694"], ["updated_at", "2023-11-19 23:32:22.613694"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "281c5b5bdecd7ccadcbbb4bc014c3a760d3e29c1"], ["created_at", "2023-11-19 23:32:22.629375"], ["updated_at", "2023-11-19 23:32:22.629375"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (29.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "content" text, "product_id" bigint NOT NULL, "user_id" bigint NOT NULL, "date" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying, "description" text, "price" decimal, "rarity" integer, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "sold" boolean DEFAULT FALSE)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "phone_number" character varying)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_a0d280f6e4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "products" ADD CONSTRAINT "fk_rails_dee2631783"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231118224630)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20231118014921),
+(20231118020127),
+(20231118020217),
+(20231118223926),
+(20231118223930);
+
+[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-11-19 23:32:22.814486"], ["updated_at", "2023-11-19 23:32:22.814486"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2023-11-19 23:32:22.826408"], ["key", "environment"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "281c5b5bdecd7ccadcbbb4bc014c3a760d3e29c1"], ["created_at", "2023-11-19 23:32:22.833045"], ["updated_at", "2023-11-19 23:32:22.833045"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4978359321432754005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4978359321432754005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:32:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 38ms (ActiveRecord: 6.2ms | Allocations: 6390)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:32:56 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3845)
+  Rendered layout layouts/application.html.erb (Duration: 154.9ms | Allocations: 40638)
+Completed 200 OK in 172ms (Views: 160.0ms | ActiveRecord: 0.0ms | Allocations: 49562)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:33:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 55ms (ActiveRecord: 11.1ms | Allocations: 5949)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:33:03 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.1ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.4ms | Allocations: 3808)
+  Rendered layout layouts/application.html.erb (Duration: 215.3ms | Allocations: 40488)
+Completed 200 OK in 243ms (Views: 223.0ms | ActiveRecord: 0.0ms | Allocations: 49245)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-19 20:33:05 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 234)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 212)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 2957)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 5435)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 6782)
+
+
+Started POST "/" for 127.0.0.1 at 2023-11-19 20:33:17 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"Benja", "phone_number"=>"111"}, "commit"=>"Aceptar"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "bthompson@uc.cl"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-11-19 23:33:18.146188"], ["updated_at", "2023-11-19 23:33:18.146188"], ["name", "Benja"], ["phone_number", "111"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 317ms (ActiveRecord: 8.0ms | Allocations: 20964)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:33:18 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 1.7ms | Allocations: 1425)
+  Rendered home/home.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2124)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2224)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.6ms | Allocations: 5352)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:36:46 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 2.8ms | Allocations: 1684)
+  Rendered home/home.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2342)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2442)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 6.2ms | Allocations: 17482)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:40:23 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 2.3ms | Allocations: 1684)
+  Rendered home/home.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2342)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 2442)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 5.9ms | Allocations: 17483)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:41:57 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 2.2ms | Allocations: 1684)
+  Rendered home/home.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2342)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2442)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 6.9ms | Allocations: 17481)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:42:02 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 0.5ms | Allocations: 1133)
+  Rendered home/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1202)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1290)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 2916)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 20:48:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:70:in `set_product'
+Completed 404 Not Found in 58ms (ActiveRecord: 5.0ms | Allocations: 8941)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  
+app/controllers/products_controller.rb:70:in `set_product'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4978359321432754005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4978359321432754005)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 20:48:50 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:70:in `set_product'
+Completed 404 Not Found in 34ms (ActiveRecord: 4.6ms | Allocations: 7971)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  
+app/controllers/products_controller.rb:70:in `set_product'
+Started POST "/products" for ::1 at 2023-11-19 20:53:07 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"name"=>"Moneda", "description"=>"Moneda antigua del siglo XX", "price"=>500.0, "rarity"=>5, "user_id"=>1}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+  [1m[36mProduct Create (7.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "rarity", "user_id", "created_at", "updated_at", "sold") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Moneda"], ["description", "Moneda antigua del siglo XX"], ["price", "500.0"], ["rarity", 5], ["user_id", 1], ["created_at", "2023-11-19 23:53:07.514610"], ["updated_at", "2023-11-19 23:53:07.514610"], ["sold", false]]
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/products_controller.rb:33:in `block in create'
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 110ms (ActiveRecord: 22.4ms | Allocations: 23360)
+
+
+Started GET "/products/1" for ::1 at 2023-11-19 20:53:07 -0300
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:70:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 129.2ms | Allocations: 37381)
+Completed 200 OK in 191ms (Views: 137.6ms | ActiveRecord: 0.8ms | Allocations: 41666)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 20:54:10 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:70:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 154.5ms | Allocations: 37198)
+Completed 200 OK in 214ms (Views: 157.8ms | ActiveRecord: 4.2ms | Allocations: 52796)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:54:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+Completed 401 Unauthorized in 19ms (ActiveRecord: 0.0ms | Allocations: 2492)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 20:54:36 -0300
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.3ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 28.2ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 289.4ms | Allocations: 40374)
+Completed 200 OK in 336ms (Views: 299.5ms | ActiveRecord: 5.3ms | Allocations: 50183)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 20:54:43 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 335ms (ActiveRecord: 5.0ms | Allocations: 16052)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 20:54:43 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 1.8ms | Allocations: 1424)
+  Rendered home/home.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2121)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2221)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms | Allocations: 5058)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/login" for 127.0.0.1 at 2023-11-19 21:02:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 48ms (ActiveRecord: 4.3ms | Allocations: 11556)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:02:36 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 2.9ms | Allocations: 1758)
+  Rendered home/home.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2414)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2514)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.4ms | Allocations: 7047)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:15:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 1.6ms | Allocations: 1685)
+  Rendered home/home.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2343)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2443)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 4.0ms | Allocations: 17462)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:16:20 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 1.5ms | Allocations: 1685)
+  Rendered home/home.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2343)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2443)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.6ms | Allocations: 17468)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:17:17 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered products/_index.html.erb (Duration: 1.6ms | Allocations: 1684)
+  Rendered home/home.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2342)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2442)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.8ms | Allocations: 17463)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h1>Productos</h1>
+    2: 
+    3: <ul>
+    4:   <% @products.each do |product| %>
+    5:     <li>
+    6:       <%= link_to product.name, product %>
+    7:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/products/_index.html.erb:4
+app/views/home/home.html.erb:2
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 21:22:01 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:71:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 169.0ms | Allocations: 37496)
+Completed 200 OK in 230ms (Views: 172.7ms | ActiveRecord: 4.2ms | Allocations: 53067)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:30:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1903)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2005)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 6.2ms | Allocations: 15270)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    2: <h1>Productos</h1>
+    3: 
+    4: <ul>
+    5:   <% @products.each do |product| %>
+    6:     <li>
+    7:       <%= link_to product.name, product %>
+    8:       <% if user_signed_in? && current_user == product.user %>
+  
+app/views/home/home.html.erb:5
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:31:50 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 41ms (ActiveRecord: 7.2ms | Allocations: 8411)
+
+
+  
+ActionController::MissingExactTemplate (HomeController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.8) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.8) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.8) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:32:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 30.9ms | Allocations: 9554)
+  Rendered layout layouts/application.html.erb (Duration: 116.9ms | Allocations: 46116)
+Completed 200 OK in 211ms (Views: 116.9ms | ActiveRecord: 8.9ms | Allocations: 63670)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-11-19 21:33:28 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 172ms (ActiveRecord: 10.6ms | Allocations: 13887)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:33:29 -0300
+Processing by HomeController#home as TURBO_STREAM
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 473)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 21:33:29 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.5ms | Allocations: 835)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.2ms | Allocations: 3791)
+  Rendered layout layouts/application.html.erb (Duration: 225.4ms | Allocations: 40594)
+Completed 200 OK in 248ms (Views: 240.4ms | ActiveRecord: 0.0ms | Allocations: 43523)
+
+
+Started GET "/register" for 127.0.0.1 at 2023-11-19 21:33:32 -0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.4ms | Allocations: 242)
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 681)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 34.4ms | Allocations: 4663)
+  Rendered layout layouts/application.html.erb (Duration: 45.4ms | Allocations: 7141)
+Completed 200 OK in 60ms (Views: 50.7ms | ActiveRecord: 0.0ms | Allocations: 8710)
+
+
+Started POST "/" for 127.0.0.1 at 2023-11-19 21:33:47 -0300
+Processing by Users::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"hhh@hhh.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"hhh", "phone_number"=>"111"}, "commit"=>"Aceptar"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hhh@hhh.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (12.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "phone_number") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["email", "hhh@hhh.cl"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-11-20 00:33:48.332934"], ["updated_at", "2023-11-20 00:33:48.332934"], ["name", "hhh"], ["phone_number", "111"]]
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 358ms (ActiveRecord: 22.9ms | Allocations: 8809)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:33:48 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 31.2ms | Allocations: 9172)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 11698)
+Completed 200 OK in 65ms (Views: 31.0ms | ActiveRecord: 7.7ms | Allocations: 16221)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-11-19 21:34:08 -0300
+Processing by Users::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 20ms (ActiveRecord: 5.9ms | Allocations: 6169)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:34:08 -0300
+Processing by HomeController#home as TURBO_STREAM
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 443)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-11-19 21:34:08 -0300
+Processing by Users::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 831)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3554)
+  Rendered layout layouts/application.html.erb (Duration: 98.6ms | Allocations: 39770)
+Completed 200 OK in 106ms (Views: 102.0ms | ActiveRecord: 0.0ms | Allocations: 41338)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-11-19 21:34:15 -0300
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"bthompson@uc.cl", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Aceptar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "bthompson@uc.cl"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 264ms (ActiveRecord: 0.4ms | Allocations: 4344)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:34:15 -0300
+Processing by HomeController#home as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 15.4ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 4210)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 1.2ms | Allocations: 5874)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2023-11-19 21:34:18 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 0.8ms | Allocations: 109)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2805)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.4ms | Allocations: 4650)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 21:34:22 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2676)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 3572)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2023-11-19 21:35:27 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.1ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2761)
+Completed 200 OK in 17ms (Views: 11.9ms | ActiveRecord: 0.4ms | Allocations: 4546)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 21:35:29 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2691)
+Completed 200 OK in 12ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 3581)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:36:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1897)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2000)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 37.1ms | Allocations: 19493)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <main class="container">
+<h1>Productos</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= 'Nombre: ' product.name, product %>
+      <%= 'Descripción: ' product.description, product %>
+      <% if user_signed_in? && current_user == product.user %>
+        <%= link_to 'Editar', edit_product_path(product) %> |
+        <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Publicar producto', new_product_path %>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 text-center">
+      <h1 class="display-4">HOLA a CollectorSwap</h1>
+      <p class="lead">Your go-to platform for collectors</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <% if user_signed_in? %>
+        <div class="alert alert-success">
+          Logged in as <strong><%= current_user.name %></strong>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+        </div>
+      <% else %>
+        <div class="text-center">
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</main>
+):
+1:    <main class="container">
+2:    <h1>Productos</h1>
+3:    
+4:    <ul>
+5:      <% @products.each do |product| %>
+6:        <li>
+7:          <%= 'Nombre: ' product.name, product %>
+8:          <%= 'Descripción: ' product.description, product %>
+9:          <% if user_signed_in? && current_user == product.user %>
+10:            <%= link_to 'Editar', edit_product_path(product) %> |
+11:            <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+12:          <% end %>
+13:        </li>
+14:      <% end %>
+15:    </ul>
+16:    
+17:    <%= link_to 'Publicar producto', new_product_path %>
+18:    
+19:      <div class="row justify-content-center mt-5">
+20:        <div class="col-md-6 text-center">
+21:          <h1 class="display-4">HOLA a CollectorSwap</h1>
+22:          <p class="lead">Your go-to platform for collectors</p>
+23:        </div>
+24:      </div>
+25:    
+26:      <div class="row justify-content-center mt-4">
+27:        <div class="col-md-6">
+28:          <% if user_signed_in? %>
+29:            <div class="alert alert-success">
+30:              Logged in as <strong><%= current_user.name %></strong>
+31:              <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+32:              <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+33:            </div>
+34:          <% else %>
+35:            <div class="text-center">
+36:              <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+37:              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+38:            </div>
+39:          <% end %>
+40:        </div>
+41:      </div>
+42:    
+43:    </main>
+  
+app/views/home/home.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:8: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:8: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:8: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/home/home.html.erb:8: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:38:11 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1440)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1529)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 3705)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <main class="container">
+<h1>Productos</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      Nombre:
+      <%= product.name, product %>
+      Descripción:
+      <%= product.description, product %>
+      <% if user_signed_in? && current_user == product.user %>
+        <%= link_to 'Editar', edit_product_path(product) %> |
+        <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Publicar producto', new_product_path %>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 text-center">
+      <h1 class="display-4">HOLA a CollectorSwap</h1>
+      <p class="lead">Your go-to platform for collectors</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <% if user_signed_in? %>
+        <div class="alert alert-success">
+          Logged in as <strong><%= current_user.name %></strong>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+        </div>
+      <% else %>
+        <div class="text-center">
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</main>
+):
+1:    <main class="container">
+2:    <h1>Productos</h1>
+3:    
+4:    <ul>
+5:      <% @products.each do |product| %>
+6:        <li>
+7:          Nombre:
+8:          <%= product.name, product %>
+9:          Descripción:
+10:          <%= product.description, product %>
+11:          <% if user_signed_in? && current_user == product.user %>
+12:            <%= link_to 'Editar', edit_product_path(product) %> |
+13:            <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+14:          <% end %>
+15:        </li>
+16:      <% end %>
+17:    </ul>
+18:    
+19:    <%= link_to 'Publicar producto', new_product_path %>
+20:    
+21:      <div class="row justify-content-center mt-5">
+22:        <div class="col-md-6 text-center">
+23:          <h1 class="display-4">HOLA a CollectorSwap</h1>
+24:          <p class="lead">Your go-to platform for collectors</p>
+25:        </div>
+26:      </div>
+27:    
+28:      <div class="row justify-content-center mt-4">
+29:        <div class="col-md-6">
+30:          <% if user_signed_in? %>
+31:            <div class="alert alert-success">
+32:              Logged in as <strong><%= current_user.name %></strong>
+33:              <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+34:              <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+35:            </div>
+36:          <% else %>
+37:            <div class="text-center">
+38:              <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+39:              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+40:            </div>
+41:          <% end %>
+42:        </div>
+43:      </div>
+44:    
+45:    </main>
+  
+app/views/home/home.html.erb:8: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:10: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:8: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:10: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:8: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:10: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:8: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:10: syntax error, unexpected ')', expecting '='
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:38:51 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 29.3ms | Allocations: 9184)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 12017)
+Completed 200 OK in 62ms (Views: 34.2ms | ActiveRecord: 4.0ms | Allocations: 20931)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 21:39:14 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 131)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2819)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 4698)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2023-11-19 21:39:22 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3101)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 0.8ms | Allocations: 4462)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 21:39:24 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 2697)
+Completed 200 OK in 19ms (Views: 13.5ms | ActiveRecord: 0.6ms | Allocations: 3561)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:39:44 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  Rendered home/home.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1417)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1506)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms | Allocations: 3724)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <main class="container">
+<h1>Productos</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <%= product.name, product %>
+      <% if user_signed_in? && current_user == product.user %>
+        <%= link_to 'Editar', edit_product_path(product) %> |
+        <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Publicar producto', new_product_path %>
+
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6 text-center">
+      <h1 class="display-4">HOLA a CollectorSwap</h1>
+      <p class="lead">Your go-to platform for collectors</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <% if user_signed_in? %>
+        <div class="alert alert-success">
+          Logged in as <strong><%= current_user.name %></strong>
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+        </div>
+      <% else %>
+        <div class="text-center">
+          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</main>
+):
+1:    <main class="container">
+2:    <h1>Productos</h1>
+3:    
+4:    <ul>
+5:      <% @products.each do |product| %>
+6:        <li>
+7:          <%= product.name, product %>
+8:          <% if user_signed_in? && current_user == product.user %>
+9:            <%= link_to 'Editar', edit_product_path(product) %> |
+10:            <%= link_to 'Eliminar', product, method: :delete, data: { confirm: '¿Estás seguro?' } %> |
+11:          <% end %>
+12:        </li>
+13:      <% end %>
+14:    </ul>
+15:    
+16:    <%= link_to 'Publicar producto', new_product_path %>
+17:    
+18:      <div class="row justify-content-center mt-5">
+19:        <div class="col-md-6 text-center">
+20:          <h1 class="display-4">HOLA a CollectorSwap</h1>
+21:          <p class="lead">Your go-to platform for collectors</p>
+22:        </div>
+23:      </div>
+24:    
+25:      <div class="row justify-content-center mt-4">
+26:        <div class="col-md-6">
+27:          <% if user_signed_in? %>
+28:            <div class="alert alert-success">
+29:              Logged in as <strong><%= current_user.name %></strong>
+30:              <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
+31:              <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+32:            </div>
+33:          <% else %>
+34:            <div class="text-center">
+35:              <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
+36:              <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
+37:            </div>
+38:          <% end %>
+39:        </div>
+40:      </div>
+41:    
+42:    </main>
+  
+app/views/home/home.html.erb:7: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:7: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:7: syntax error, unexpected ')', expecting '='
+app/views/home/home.html.erb:7: syntax error, unexpected ')', expecting '='
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:39:55 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2222)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5049)
+Completed 200 OK in 29ms (Views: 20.2ms | ActiveRecord: 2.8ms | Allocations: 7267)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2023-11-19 21:40:00 -0300
+Processing by ProductsController#new as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 510)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  
+app/controllers/products_controller.rb:65:in `product_params'
+app/controllers/products_controller.rb:22:in `new'
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:40:26 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2222)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 5091)
+Completed 200 OK in 34ms (Views: 23.6ms | ActiveRecord: 2.6ms | Allocations: 7285)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2023-11-19 21:40:31 -0300
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 106)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2745)
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 3846)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2023-11-19 21:40:32 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:69:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2692)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.5ms | Allocations: 3566)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2023-11-19 21:40:34 -0300
+Processing by ProductsController#new as HTML
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 495)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: product):
+  
+app/controllers/products_controller.rb:65:in `product_params'
+app/controllers/products_controller.rb:22:in `new'
+Started GET "/products/new" for 127.0.0.1 at 2023-11-19 21:41:08 -0300
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 107)
+  Rendered layout layouts/application.html.erb (Duration: 119.3ms | Allocations: 37122)
+Completed 200 OK in 150ms (Views: 121.0ms | ActiveRecord: 3.2ms | Allocations: 44334)
+
+
+Started GET "/" for 127.0.0.1 at 2023-11-19 21:41:11 -0300
+Processing by HomeController#home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/home.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/home/home.html.erb:5
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/home.html.erb:8
+  Rendered home/home.html.erb within layouts/application (Duration: 19.0ms | Allocations: 5007)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 7488)
+Completed 200 OK in 47ms (Views: 28.5ms | ActiveRecord: 4.7ms | Allocations: 13211)
+
+
