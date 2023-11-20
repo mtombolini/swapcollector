@@ -1,3 +1,13 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
-<%= @product.name %>
+<!-- app/views/products/show.html.erb -->
+<p>
+  <strong>Nombre:</strong>
+  <%= @product.name %>
+</p>
+
+<!-- Aquí mostramos la imagen si existe -->
+<% if @product.image.attached? %>
+  <p>
+    <strong>Imagen:</strong>
+    <%= image_tag @product.image.variant(resize_to_limit: [150, 150]) %>
+  </p>
+<% end %>
