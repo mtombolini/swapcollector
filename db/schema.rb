@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -85,4 +84,3 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_19_222717) do
   add_foreign_key "comments", "users"
   add_foreign_key "products", "users"
 end
->>>>>>> cruds_products
