@@ -1,0 +1,27 @@
+<!-- app/views/trade_offers/new.html.erb -->
+<%= form_with model: @trade_offer, local: true do |form| %>
+<%= form.hidden_field :receiver_id%>
+<%= form.hidden_field :requested_product_id, value: @requested_product.id %>
+
+<%= form.label :requested_product, "Producto solicitado:" %>
+
+<div>
+ <%= image_tag @requested_product.image.variant(resize_to_limit: [150, 150]) if @requested_product.image.attached?%>
+ <%= @requested_product.name %>
+</div>
+
+<% if @offered_products.any? %>
+  <%= form.label :offered_products_ids, "Selecciona los productos que quieres ofrecer:" %>
+  <%= form.collection_check_boxes :offered_product_ids, @offered_products, :id, :name %>
+<% else %>
+  <p>No tienes productos para ofrecer</p>
+<% end %>
+
+<%= form.label :message, "Mensaje adicional (opcional):" %>
+<%= form.text_area :message %>
+
+<%= form.submit "Enviar oferta" %>
+<% end %>
+
+
+    
