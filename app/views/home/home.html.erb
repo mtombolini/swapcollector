@@ -1,43 +1,32 @@
+<header>
+  <%= render "home/shared/header" %>
+</header>
+
 <main class="container">
-<h1>Productos</h1>
+  <h1 class="mt-3">Inicio</h1>
+  <hr>
 
-<ul>
-  <% @products.each do |product| %>
-    <li>
-      <%= link_to product.name, product%>
-      <%= image_tag product.image.variant(resize_to_limit: [150, 150]) %>
-      <% if user_signed_in? && current_user == product.user %>
-        <%= link_to 'Editar', edit_product_path(product) %> |
-        <%= button_to 'Eliminar', product_path(product), method: :delete, form: { "data-turbo-confirm": "¿Estás seguro?" } %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+          <% if user_signed_in? && current_user == product.user %>
+            <div class="position-absolute top-0 end-0 mt-2 me-2">
+              <i class="fas fa-star text-warning"></i>
+            </div>
+          <% end %>
 
-<%= link_to 'Publicar producto', new_product_path %>
+          <div class="card-body" style="background-color: #FFD200;">
+            <h5 class="card-title text-center">
+              <%= link_to product.name, product, class: "text-decoration-none" %>
+            </h5>
+          </div>
 
-  <div class="row justify-content-center mt-5">
-    <div class="col-md-6 text-center">
-      <h1 class="display-4">HOLA a CollectorSwap</h1>
-      <p class="lead">Your go-to platform for collectors</p>
-    </div>
-  </div>
+          <hr>
 
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-6">
-      <% if user_signed_in? %>
-        <div class="alert alert-success">
-          Logged in as <strong><%= current_user.name %></strong>
-          <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-primary btn-sm ml-2" %>
-          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-danger btn-sm ml-2" %>
+          <%= image_tag product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
         </div>
-      <% else %>
-        <div class="text-center">
-          <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg" %>
-          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-lg ml-2" %>
-        </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-
 </main>

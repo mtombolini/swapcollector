@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   end
   resources :comments, only: [:show, :update, :destroy]
   
-  devise_scope :user do
-    root to: 'home#home'
-  end
+  # Ruta de inicio fuera de devise_scope
+  root to: 'home#home'
 end
