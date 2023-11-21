@@ -1,0 +1,23 @@
+<!-- app/views/trade_offers/show.html.erb -->
+<h1>Detalle de la Oferta de Intercambio</h1>
+
+<p>Oferta enviada a: <%= @trade_offer.receiver.name %></p>
+
+<div class="requested-product">
+  <p>Producto solicitado: <%= @trade_offer.requested_product.name %></p>
+  <% if @trade_offer.requested_product.image.attached? %>
+    <%= image_tag @trade_offer.requested_product.image.variant(resize_to_limit: [150, 150]) %>
+  <% end %>
+</div>
+
+<div class="offered-products">
+  <p>Productos ofrecidos:</p>
+  <ul>
+    <% @trade_offer.offered_products.each do |product| %>
+      <li><%= product.name %></li>
+    <% end %>
+  </ul>
+</div>
+
+<%# Asegúrate de que el enlace lleva al índice general de ofertas o a la vista adecuada según tu diseño %>
+<%= link_to 'Volver a ofertas', root_path, class: 'btn btn-secondary' %>
