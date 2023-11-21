@@ -1,0 +1,71 @@
+<style>
+  .navbar-light .navbar-toggler {
+    filter: invert(100%);
+  }
+    .navbar-nav .dropdown-menu {
+    position: absolute;
+    }
+    .dropdown-menu-centered .dropdown-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+</style>
+
+<header style="background-color: #006DB2;">
+  <nav class="navbar navbar-light" style="background-color: #006DB2;">
+    <div class="container-fluid me-5">
+      <!-- Botón para versión móvil siempre visible -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Logo y nombre de la aplicación con estilo modificado -->
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <h1 class="h1">
+          <span style="font-weight: bold; color: #FFD200;">Swap</span>
+          <span style="font-weight: bold; color: white;">Collector</span>
+        </h1>
+      <% end %>
+
+
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown me-3">
+          <a href="#" class="nav-link dropdown-toggle" style="color: white;" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.name %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-centered" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "btn btn-danger", form: { class: "dropdown-item p-0" } %>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Menú colapsable -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-4 mb-lg-0">
+          <!-- Enlaces del menú -->
+          <li class="nav-item mt-2" style="background-color: #FFD200; border-radius: 0.5rem;">
+            <%= link_to raw('<strong>Publicar producto</strong>'), new_product_path, class: "nav-link ms-2", style: "color: black;" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to root_path, class: "nav-link ms-2", style: "color: white;" do %>
+              <strong>Inicio</strong>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link ms-2" style="color: white;"><strong>Productos Publicados</strong></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link ms-2" style="color: white;"><strong>Productos Intercambiados</strong></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

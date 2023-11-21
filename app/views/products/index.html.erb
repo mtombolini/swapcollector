@@ -1,6 +1,150 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
-<%= @products.each do |product| 
-end %>
+<header>
+  <%= render "home/shared/header" %>
+</header>
+
+<main class="container mt-4">
+  <div class="row">
+    <!-- Columna de detalles del producto -->
+    <div class="col-md-7">
+      <div class="card h-100 shadow">
+        <% if user_signed_in? && current_user == @product.user %>
+          <div class="position-absolute top-0 end-0 me-2">
+            <i class="fas fa-star text-danger"></i>
+          </div>
+        <% end %>
+
+        <div class="card-body" style="background-color: #FFD200; border-radius: 0.5rem;">
+          <h1 class="card-title text-center">
+            <%= @product.name %>
+          </h1>
+        </div>
+
+        <hr>
+
+        <%= image_tag @product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
+
+        <hr>
+
+        <div class="card-body">
+          <p class="text-start" style="font-size: 1.25rem;">
+            <strong>Descripción:</strong> <%= @product.description %>
+          </p>
+          <p class="text-start" style="font-size: 1.25rem;">
+            <strong>Rareza:</strong> <%= @product.rarity %>
+          </p>
+          <p class="text-start" style="font-size: 1.25rem;">
+            <strong>Propietario:</strong> <%= @product.user.name %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+      <!-- Espacio vacío entre columnas -->
+    </div>
+
+    <!-- Columna de formulario de edición -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <div class="card-body" style="background-color: #006DB2; border-radius: 0.5rem; color: white">
+          <h1 class="card-title text-center">Editar Producto</h1>
+        </div>
+        <hr>
+        <div class="card-body">
+          <%= form_with(model: @product, local: true) do |form| %>
+            <% if @product.errors.any? %>
+              <div id="error_explanation" class="alert alert-danger">
+                <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+                <ul>
+                  <% @product.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="form-group">
+              <%= form.label :name, class: "form-label" %>
+              <%= form.text_field :name, id: :product_name, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :description, class: "form-label" %>
+              <%= form.text_area :description, id: :product_description, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :price, class: "form-label" %>
+              <%= form.number_field :price, id: :product_price, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :rarity, class: "form-label" %>
+              <%= form.number_field :rarity, id: :product_rarity, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :image, class: "form-label" %>
+              <%= form.file_field :image, id: :product_image, class: "form-control" %>
+            </div>
+
+            <div class="actions mt-3">
+              <%= form.submit class: "btn btn-success w-100" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<h1>Editar detalles del producto</h1>
+
+<!-- app/views/products/new.html.erb -->
+<%= form_with(model: @product, local: true) do |form| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :product_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price, id: :product_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rarity %>
+    <%= form.number_field :rarity, id: :product_rarity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :product_user_id %>
+  </div>
 
 
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :product_image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
