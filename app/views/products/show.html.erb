@@ -1,6 +1,85 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
-<%= @product.name %>
-<%= image_tag @product.image.variant(resize_to_limit: [150, 150]) %>
-<%= link_to "Volver al inicio", root_path%>
+<header>
+    <%= render "home/shared/header" %>
+</header>
 
+<main class="container mt-4">
+  <div class="row">
+    <!-- Columna de detalles del producto -->
+    <div class="col-md-7">
+      <div class="card h-100 shadow">
+        <% if user_signed_in? && current_user == @product.user %>
+          <div class="position-absolute top-0 end-0 me-2">
+            <i class="fas fa-star text-danger"></i>
+          </div>
+        <% end %>
+
+        <div class="card-body" style="background-color: #FFD200; border-radius: 0.5rem;">
+          <h1 class="card-title text-center">
+            <%= @product.name %>
+          </h1>
+        </div>
+
+        <hr>
+
+        <%= image_tag @product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
+        <hr>
+
+        <div class="card-body">
+          <p class="text-start" style="font-size: 1.25rem;">
+            <strong>Descripción:</strong> <%= @product.description %>
+          </p>
+          <p class="text-start" style="font-size: 1.25rem;">
+            <strong>Rareza:</strong> <%= @product.rarity %>
+          </p>
+          <p class="text-start" style="font-size: 1.25rem;">
+            <strong>Propietario:</strong> <%= @product.user.name %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-1">
+    </div>
+
+    <!-- Columna de acciones -->
+    <div class="col-md-4">
+      <div class="card h-100 shadow">
+        <div class="card-body" style="background-color: #006DB2; border-radius: 0.5rem; color: white">
+          <h1 class="card-title text-center">
+            Opciones
+          </h1>
+        </div>
+        <hr>
+        <div class="card-body">
+            <% if user_signed_in? && current_user == @product.user %>
+                <div class="text-center">
+                <%= link_to "Editar", edit_product_path(@product), class: "btn btn-primary w-100 mb-2" %>
+                <%= button_to product_path(@product), method: :delete, form: { "data-turbo-confirm": "¿Estás seguro?" }, class: "btn btn-danger w-100" do %>
+                    Eliminar
+                <% end %>
+                </div>
+            <% else %>
+                <div class="text-center">
+                <%= link_to "Enviar solicitud de trueque", "#", class: "btn btn-warning w-100" %>
+                </div>
+            <% end %>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Nuevo contenedor para comentarios -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Comentarios</h3>
+          <!-- Aquí puedes insertar los comentarios y el formulario para agregar nuevos comentarios -->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -12,7 +12,7 @@
         <div class="card h-100 shadow">
           <% if user_signed_in? && current_user == product.user %>
             <div class="position-absolute top-0 end-0 mt-2 me-2">
-              <i class="fas fa-star text-warning"></i>
+              <i class="fas fa-star text-danger"></i>
             </div>
           <% end %>
 
@@ -24,7 +24,13 @@
 
           <hr>
 
-          <%= image_tag product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
+          <% if product.image.attached? %>
+            <%= image_tag product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
+          <% else %>
+            <!-- Imagen predeterminada o mensaje si no hay imagen -->
+            <p>No hay imagen disponible</p>
+          <% end %>
+
         </div>
       </div>
     <% end %>

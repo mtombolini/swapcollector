@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :products do
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:show, :create]
   end
   resources :comments, only: [:show, :update, :destroy]
   
