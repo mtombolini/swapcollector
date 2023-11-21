@@ -1,6 +1,19 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
-<%= @product.name %>
-<%= image_tag @product.image.variant(resize_to_limit: [150, 150]) %>
-<%= link_to "Volver al inicio", root_path%>
+<h1><%= @product.name %></h1>
 
+<%# Muestra la imagen del producto si está adjunta %>
+<%= image_tag @product.image.variant(resize_to_limit: [150, 150]) if @product.image.attached? %>
+
+<%# Opciones basadas en el estado del usuario y la propiedad del producto %>
+<% if user_signed_in? && current_user != @product.user %>
+  <% if current_user.products.any? %>
+    <%= link_to "Solicitud de intercambio", new_trade_offer_path(product_id: @product.id, receiver_id: @product.user.id), class: 'btn btn-primary' %>
+  <% else %>
+    <p>Necesitas tener productos listados para poder solicitar un intercambio.</p>
+  <% end %>
+<% elsif !user_signed_in? %>
+  <%= link_to "Inicia sesión para intercambiar", new_user_session_path, class: 'btn btn-primary' %>
+<% else %>
+  <p>Este es tu producto.</p>
+<% end %>
+
+<%= link_to "Volver al inicio", root_path, class: 'btn btn-secondary' %>

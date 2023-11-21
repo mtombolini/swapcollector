@@ -1,0 +1,42 @@
+<!-- app/views/trade_offers/new.html.erb -->
+<%= form_with model: @trade_offer, local: true, data: { turbo: false }, html: { class: "trade-offer-form" } do |form| %>
+  
+  <%= render 'shared/error_messages', object: @trade_offer %>
+
+  <div class="requested-product">
+    <%= form.label :requested_product, "Producto solicitado:" %>
+    <div>
+      <%= image_tag @requested_product.image.variant(resize_to_limit: [150, 150]) if @requested_product.image.attached? %>
+      <p><%= @requested_product.name %></p>
+    </div>
+  </div>
+  
+  <%= form.hidden_field :receiver_id, value: @trade_offer.receiver_id %>
+  <%= form.hidden_field :requested_product_id, value: @trade_offer.requested_product_id %>
+
+  <div class="offered-products">
+    <% if @offered_products.any? %>
+      <%= form.label :offered_product_ids, "Selecciona los productos que quieres ofrecer:" %>
+      <%= form.collection_check_boxes :offered_product_ids, @offered_products, :id, :name do |b| %>
+        <%= b.check_box %>
+        <%= b.text %>
+      <% end %>
+    <% else %>
+      <p>No tienes productos para ofrecer</p>
+    <% end %>
+  </div>
+
+  <div class="additional-message">
+    <%= form.label :message, "Mensaje adicional (opcional):" %>
+    <%= form.text_area :message %>
+  </div>
+
+  <%= form.submit "Enviar oferta", class: "submit-button" %>
+
+<% end %>
+
+
+
+
+
+    

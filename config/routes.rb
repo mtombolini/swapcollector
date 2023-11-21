@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: 'home#home'
   end
+
+  resources :trade_offers
+
 end
