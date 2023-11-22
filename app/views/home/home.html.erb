@@ -1,3 +1,21 @@
+<style>
+  .card-img-container {
+    height: 150px; /* Altura fija para la imagen y su contenedor */
+    background-color: white; /* Fondo blanco para imágenes más pequeñas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-img-top {
+    max-height: 150px;
+    max-width: 100%;
+    object-fit: contain; /* Mantiene el aspecto de la imagen */
+  }
+  .card-title-container {
+    height: 50px; /* Altura fija para el nombre del producto */
+  }
+</style>
+
 <header>
   <%= render "home/shared/header" %>
 </header>
@@ -17,19 +35,22 @@
           <% end %>
 
           <div class="card-body" style="background-color: #FFD200;">
-            <h5 class="card-title text-center">
-              <%= link_to product.name, product, class: "text-decoration-none" %>
-            </h5>
+            <div class="card-title-container">
+              <h5 class="card-title text-center">
+                <%= link_to product.name, product, class: "text-decoration-none" %>
+              </h5>
+            </div>
           </div>
 
           <hr>
 
-          <% if product.image.attached? %>
-            <%= image_tag product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
-          <% else %>
-            <!-- Imagen predeterminada o mensaje si no hay imagen -->
-            <p>No hay imagen disponible</p>
-          <% end %>
+          <div class="card-img-container">
+            <% if product.image.attached? %>
+              <%= image_tag product.image.variant(resize_to_limit: [150, 150]), class: "card-img-top img-fluid" %>
+            <% else %>
+              <p>No hay imagen disponible</p>
+            <% end %>
+          </div>
 
         </div>
       </div>

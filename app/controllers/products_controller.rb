@@ -55,7 +55,7 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-        format.html { redirect_to products_url, notice: "Producto eliminado exitosamente", status: :see_other}
+        format.html { redirect_to root_path, notice: "Producto eliminado exitosamente", status: :see_other}
         format.turbo_stream
     end
   end
