@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+La página es una plataforma de intercambio de objetos coleccionables de todo tipo.
+Los CRUDs están completos y pueden hacerse desde la misma página (tanto para usuarios como para productos). En el inicio de la página
+se muestran todos los productos publicados para navegar a través de ellos. Los productos con una estrella en la esquina son los productos que le pertenecen al usuario actual que está en la sesión. Si el usuario clickea uno de sus productos este será dirigido a una vista para editarlo o eliminarlo. Si el usuario clickea un producto que no le pertenece, este será dirigido a una vista con los detalles del producto y le dará una opción para hacer una solicitud de intercambio. La página ofrece al usuario la opción de publicar un producto, en donde pide los siguientes parámetros: nombre(str) descripción(str) precio (float) e indice de rareza (int del 1 al 5). También le pide al usuario adjuntar una imagen del producto.
