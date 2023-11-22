@@ -8,3 +8,6 @@ CLOUDINARY_API_KEY=761769923978181
 CLOUDINARY_API_SECRET=q_w79xNUmY-YuPXfHfTsr3qCQHU
 También hay que tener instalada con sudo la librería libvips.
 Intentamos implementar el testing pero nos lanza errores. La implementación está en test/models/user_test.rb.
+
+
+Link web: https://collector-swap-r9wz.onrender.com/
